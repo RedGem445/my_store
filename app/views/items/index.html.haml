@@ -1,0 +1,24 @@
+%h1 Items
+
+- if @items.empty?
+   %b No items in store
+- else
+   %table
+      %tr
+         %th  Item id
+         %th  Name
+         %th  Price
+         %th
+         %th
+      - @items.each do |item| 
+         %tr 
+            %td= item.id
+            %td= link_to item.name, item_path(item)
+            %td= item.price
+            %td= link_to "Удалить", item_path(item), method: :delete, data: {confirm:"Точно удалить?"}
+            %td Рейтинг: #{item.votes_count}, #{link_to "+", upvote_item_path(item) }
+
+
+
+
+

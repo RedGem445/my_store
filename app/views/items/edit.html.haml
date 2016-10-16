@@ -1,0 +1,14 @@
+%h1 Edit item
+
+=form_for @item do |f|
+	=render partial: "form", locals: {f: f}
+
+	%p #{f.submit "Обновить товар"}
+
+
+
+
+
+
+
+

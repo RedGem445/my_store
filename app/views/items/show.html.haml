@@ -1,0 +1,12 @@
+%h1= @item.name
+
+%ul
+	%li= number_to_currency(@item.price, unit: "рублей", separator: ",", delimiter: "", format: "%n %u")
+	%li= urls_to_images(@item.description) 
+	%li= @item.weight 
+
+= link_to "Удалить", item_path(@item), method: :delete, data: {confirm:"Точно удалить?"}
+	
+	
+	
+
